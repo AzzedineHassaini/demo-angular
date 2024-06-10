@@ -1,0 +1,16 @@
+<div class="chapter">
+    <h2>Demo pipes</h2>
+    <div class="content">
+        <h3>Contenus de myString : {{myString}}</h3>
+        <p>Upper : {{myString | uppercase}}</p>
+        <p>Lower : {{myString | lowercase}}</p>
+        <p>Title : {{myString | titlecase}}</p>
+        <hr>
+        <h3>Contenus de myNumber : {{myNumber}}</h3>
+        <p>Currency : {{myNumber | currency : 'EUR'}}</p>
+        <p>Custom currency : {{myNumber | customCurrency : 'US'}}</p>
+        <hr>
+        <h3>Contenus de myDate : {{myDate}}</h3>
+        <p>Format : {{myDate | date : 'dd-MM-yy'}}</p>
+    </div>
+</div>
