@@ -1,1 +1,11 @@
-<p>exo-timer works!</p>
+<div class="chapter">
+  <h2>Property bindings</h2>
+  <div class="content">
+    <button type="button" (click)="timerStart()" [disabled]="!startIsActive"> Start </button>
+    <button type="button" (click)="timerPause()" [disabled]="!pauseIsActive"> Pause </button>
+    <button type="button" (click)="timerReset()" [disabled]="!resetIsActive"> Reset </button>
+    <hr/><hr/>
+    <p>Timer raw : {{ timerValue }}</p>
+    <p>Timer : {{ timerValue | timer }}</p>
+  </div>
+</div>
