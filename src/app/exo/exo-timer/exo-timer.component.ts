@@ -11,22 +11,22 @@ export class ExoTimerComponent {
   startIsActive: boolean = true;
   pauseIsActive: boolean = false;
   resetIsActive: boolean = false;
-  intervalId: any;
+  intervalId: number = 0;
 
   timerStart(){
     this.startIsActive = false;
     this.pauseIsActive = true;
     this.resetIsActive = true;
-    if (this.intervalId != undefined) { return ;}
+    if (this.intervalId != 0) { return ;}
     this.intervalId = setInterval(() => this.updateTimer(), 1000);
   }
 
   timerPause() {
     this.startIsActive = true;
     this.pauseIsActive = false;
-    if (this.intervalId === undefined) { return ;}
-    this.intervalId = null;
+    if (this.intervalId === 0) { return ;}
     clearInterval(this.intervalId);
+    this.intervalId = 0;
   }
 
   timerReset() {

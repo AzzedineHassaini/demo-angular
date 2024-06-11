@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CustomCurrencyPipe } from './pipes/custom-currency.pipe';
 import { TimerPipe } from './pipes/timer.pipe';
@@ -22,9 +22,5 @@ import { TimerPipe } from './pipes/timer.pipe';
   ]
 })
 export class SharedModule {
-
-  static integerMinimalLength(value: number, length: number): string {
-    return value.toLocaleString('en-US', {minimumIntegerDigits: length, useGrouping:false})
-  }
 
 }
