@@ -11,10 +11,14 @@ export class CartComponent {
   @Input()
   cartItems!: ItemModel[];
 
+  item!: ItemModel;
+
   @Output()
   addItem: EventEmitter<ItemModel> = new EventEmitter();
   @Output()
   removeItem: EventEmitter<ItemModel> = new EventEmitter();
+  @Output()
+  viewItem: EventEmitter<ItemModel> = new EventEmitter();
 
   add(response: ItemModel): void {
     this.addItem.emit(response);
@@ -22,6 +26,11 @@ export class CartComponent {
 
   remove(response: ItemModel): void {
     this.removeItem.emit(response);
+  }
+
+  view(response: ItemModel) : void {
+    this.item = response;
+    this.viewItem.emit(response);
   }
 
 }

@@ -9,6 +9,8 @@ import { DemoPipeComponent } from './demo-pipe/demo-pipe.component';
 import { DemoDirectivesComponent } from './demo-directives/demo-directives.component';
 import { DemoInputOutputComponent } from './demo-input-output/demo-input-output.component';
 import { SubComponentComponent } from './demo-input-output/sub-component/sub-component.component';
+import {ComposantReutilisableComponent} from "./composant-reutilisable/composant-reutilisable.component";
+import {CarteFormateurComponent} from "./composant-reutilisable/carte-formateur/carte-formateur.component";
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { SubComponentComponent } from './demo-input-output/sub-component/sub-com
     DemoDirectivesComponent,
     DemoInputOutputComponent,
     SubComponentComponent,
+    ComposantReutilisableComponent,
+    CarteFormateurComponent
   ],
   exports: [
     SubComponentComponent

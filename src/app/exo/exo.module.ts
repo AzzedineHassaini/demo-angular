@@ -8,13 +8,15 @@ import {SharedModule} from "../shared/shared.module";
 import { ExoShoppingListComponent } from './exo-shopping-list/exo-shopping-list.component';
 import { CartComponent } from './exo-shopping-list/cart/cart.component';
 import {DemoModule} from "../demo/demo.module";
+import { ItemComponent } from './exo-shopping-list/item/item.component';
 
 
 @NgModule({
   declarations: [
     ExoTimerComponent,
     ExoShoppingListComponent,
-    CartComponent
+    CartComponent,
+    ItemComponent
   ],
   imports: [
     CommonModule,

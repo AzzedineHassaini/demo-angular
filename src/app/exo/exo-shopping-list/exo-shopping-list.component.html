@@ -5,16 +5,16 @@
     <input type="text" [(ngModel)]="item.reference">
     <label for="name">Name : </label>
     <input type="text" [(ngModel)]="item.name">
-    <label for="description">Description : </label>
-    <input type="text" [(ngModel)]="item.description">
     <label for="price">Price : </label>
     <input type="number" [(ngModel)]="item.price">
     <label for="quantity">Quantity : </label>
     <input type="number" [(ngModel)]="item.quantity">
+    <label for="image">Image : </label>
+    <input type="text" [(ngModel)]="item.img">
     <hr>
     <button (click)="addItem(item)"> Add to cart </button>
     <hr>
-    <app-cart [cartItems]="cartItems" (addItem)="addToCart($event)" (removeItem)="removeFromCart($event)">
+    <app-cart [cartItems]="cartItems" (addItem)="addOneToCart($event)" (removeItem)="removeOneFromCart($event)">
       <h2>Shopping cart</h2>
     </app-cart>
   </div>

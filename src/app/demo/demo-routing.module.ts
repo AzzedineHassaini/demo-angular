@@ -5,13 +5,15 @@ import { DemoBindingsComponent } from './demo-bindings/demo-bindings.component';
 import { DemoPipeComponent } from './demo-pipe/demo-pipe.component';
 import {DemoDirectivesComponent} from "./demo-directives/demo-directives.component";
 import {DemoInputOutputComponent} from "./demo-input-output/demo-input-output.component";
+import {ComposantReutilisableComponent} from "./composant-reutilisable/composant-reutilisable.component";
 
 const routes: Routes = [
   { path: '', component: DemoComponent, children: [
     { path: 'demo01',component: DemoBindingsComponent},
     { path: 'demo02',component: DemoPipeComponent},
     { path: 'demo03',component: DemoDirectivesComponent},
-    { path: 'demo04',component: DemoInputOutputComponent}
+    { path: 'demo04',component: DemoInputOutputComponent},
+    { path: 'demo05', component: ComposantReutilisableComponent}
   ]}
 ];
 

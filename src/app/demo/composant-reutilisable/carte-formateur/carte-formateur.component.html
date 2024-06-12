@@ -1,0 +1,7 @@
+<div class="card chapter">
+    <h2>{{formateur.surname}}</h2>
+    <h3>{{formateur.lastname}} {{formateur.firstname}}</h3>
+    <img [src]="formateur.image" alt="image de {{formateur.surname}}">
+    <p>{{formateur.comment}}</p>
+    <button (click)="triggerFormateurDuJour(formateur)">Vote</button>
+</div>

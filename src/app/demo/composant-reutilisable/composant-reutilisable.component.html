@@ -1,0 +1,14 @@
+<h2>Liste des formateurs</h2>
+@if(formateurDuJour){
+    <h3>Le formateur du jour est {{formateurDuJour.surname}}</h3>
+}
+<ul>
+    @for (formateur of formateurs; track $index) {
+        <li>
+            <app-carte-formateur 
+                [formateur]="formateur"
+                (formateurDuJourEvent)="reactToFormateurDuJour($event)">
+            </app-carte-formateur>
+        </li>
+    }
+</ul>

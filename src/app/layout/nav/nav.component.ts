@@ -15,7 +15,8 @@ export class NavComponent {
         {title: '• Demo bindings',url: '/demo/demo01'},
         {title: '• Demo pipes',url: '/demo/demo02'},
         {title: '• Demo directives',url: '/demo/demo03'},
-        {title: '• Demo input-output',url: '/demo/demo04'}
+        {title: '• Demo input-output',url: '/demo/demo04'},
+        {title: "• Demo composant reutilisable", url: '/demo/demo05'}
       ], isVisible: false},
     {title: 'Exos', children: [
         {title: '• Exo timer',url: '/exo/exo01'},
