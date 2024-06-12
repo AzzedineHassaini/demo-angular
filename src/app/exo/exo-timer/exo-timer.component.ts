@@ -11,7 +11,7 @@ export class ExoTimerComponent {
   startIsActive: boolean = true;
   pauseIsActive: boolean = false;
   resetIsActive: boolean = false;
-  intervalId: number = 0;
+  intervalId: any = null;
 
   timerStart(){
     this.startIsActive = false;
@@ -24,9 +24,9 @@ export class ExoTimerComponent {
   timerPause() {
     this.startIsActive = true;
     this.pauseIsActive = false;
-    if (this.intervalId === 0) { return ;}
+    if (this.intervalId === undefined) { return ;}
     clearInterval(this.intervalId);
-    this.intervalId = 0;
+    this.intervalId = null;
   }
 
   timerReset() {
