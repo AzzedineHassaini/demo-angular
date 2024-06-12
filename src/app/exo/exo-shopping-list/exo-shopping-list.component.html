@@ -1,0 +1,21 @@
+<div class="chapter">
+  <h2>Exo shopping list</h2>
+  <div class="content">
+    <label for="reference">Reference : </label>
+    <input type="text" [(ngModel)]="item.reference">
+    <label for="name">Name : </label>
+    <input type="text" [(ngModel)]="item.name">
+    <label for="description">Description : </label>
+    <input type="text" [(ngModel)]="item.description">
+    <label for="price">Price : </label>
+    <input type="number" [(ngModel)]="item.price">
+    <label for="quantity">Quantity : </label>
+    <input type="number" [(ngModel)]="item.quantity">
+    <hr>
+    <button (click)="addItem(item)"> Add to cart </button>
+    <hr>
+    <app-cart [cartItems]="cartItems" (addItem)="addToCart($event)" (removeItem)="removeFromCart($event)">
+      <h2>Shopping cart</h2>
+    </app-cart>
+  </div>
+</div>

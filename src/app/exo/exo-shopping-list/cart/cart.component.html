@@ -1,0 +1,23 @@
+<div class="child">
+  <ng-content></ng-content>
+  <table class="shoppingCart">
+    <thead>
+      <tr>
+        <th>Ref.</th><th>Name</th><th>Description</th><th>Price</th><th>Quantity</th><th>Add</th><th>Remove</th>
+      </tr>
+    </thead>
+    @for (item of cartItems; track $index) {
+      <tr>
+        <td>{{item.reference}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.description}}</td>
+        <td>{{item.price | customCurrency : 'EUR'}}</td>
+        <td>{{item.quantity}}</td>
+        <td><button (click)="add(item)"> Add </button></td>
+        <td><button (click)="remove(item)"> Remove </button></td>
+      </tr>
+    }
+  </table>
+
+
+</div>

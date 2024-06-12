@@ -1,0 +1,69 @@
+<div class="chapter">
+  <h2>Demo directives</h2>
+  <div class="content" [ngClass]="{'jour': isDayTime,'nuit':!isDayTime}">
+    <button (click)="toggleIsDayTime()">ON / OFF</button>
+    <!-- <h3 *ngIf="isDayTime">🌞Jour🌞</h3>
+    <h3 *ngIf="!isDayTime">🌚Nuit🌚</h3> -->
+    @if (isDayTime) {
+      <h3 [ngStyle]="{'color': 'red'}">🌞Jour🌞</h3>
+    }@else{
+      <h3 [ngStyle]="{'color': 'white'}">🌚Nuit🌚</h3>
+    }
+  </div>
+</div>
+
+<div class="chapter">
+  <h2>Switch</h2>
+  <div class="content">
+    <!-- <div [ngSwitch]="nbJour">
+        <p *ngSwitchCase="0">
+            Et le dimanche, jour deu seigneur, a quel bonheur, des patates au beurre
+        </p>
+        <p *ngSwitchCase="1">
+            Lundi des patates
+        </p>
+        <p *ngSwitchCase="2">
+            Mardi des patates
+        </p>
+        <p *ngSwitchCase="3">
+            Mercredi des patates aussi
+        </p>
+        <p *ngSwitchCase="4">
+            Jeudi des patates
+        </p>
+        <p *ngSwitchCase="5">
+            Vendredi des patates
+        </p>
+        <p *ngSwitchCase="6">
+            Samedi des patates aussi
+        </p>
+        <p *ngSwitchDefault>
+            Error
+        </p>
+    </div> -->
+    @switch (nbJour) {
+      @case (1) {
+        <p>Lundi des patates</p>
+      }
+      @case (2) {
+        <p>Mardi des patates</p>
+      }
+    }
+  </div>
+</div>
+
+<div class="chapter">
+  <h2>For</h2>
+  <div class="content">
+    <ul>
+      <li *ngFor="let name of names; let i = index;">
+        <p>{{i + 1}} : {{name}}</p>
+      </li>
+      @for (name of names; track $index) {
+        <li>
+          <p>{{name}}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</div>

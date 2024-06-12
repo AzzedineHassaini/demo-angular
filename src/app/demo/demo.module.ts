@@ -6,13 +6,22 @@ import { DemoComponent } from './demo.component';
 import { DemoBindingsComponent } from './demo-bindings/demo-bindings.component';
 import { SharedModule } from '../shared/shared.module';
 import { DemoPipeComponent } from './demo-pipe/demo-pipe.component';
+import { DemoDirectivesComponent } from './demo-directives/demo-directives.component';
+import { DemoInputOutputComponent } from './demo-input-output/demo-input-output.component';
+import { SubComponentComponent } from './demo-input-output/sub-component/sub-component.component';
 
 
 @NgModule({
   declarations: [
     DemoComponent,
     DemoBindingsComponent,
-    DemoPipeComponent
+    DemoPipeComponent,
+    DemoDirectivesComponent,
+    DemoInputOutputComponent,
+    SubComponentComponent,
+  ],
+  exports: [
+    SubComponentComponent
   ],
   imports: [
     CommonModule,

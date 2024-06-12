@@ -1,29 +1,25 @@
 <ul>
+  @for (item of navItems; track $index) {
     <li>
-        <a routerLink="/home">Accueil</a>
-        <ul>
-          <li>
-            <a routerLink="/home/about">About</a>
+      <a [routerLink]="item.url" (click)="toggleVisible(item)">{{ item.title }}</a>
+      @if (item.children != undefined && item.isVisible) {
+        @for (children of item.children; track $index) {
+          <li class="children">
+            <a [routerLink]="children.url">{{ children.title }}</a>
           </li>
-        </ul>
+        }
+      }
     </li>
-    <li>
-        <a routerLink="/demo">Demos</a>
-        <ul>
-            <li>
-                <a routerLink="/demo/demo01">Demo Bindings</a>
-            </li>
-            <li>
-                <a routerLink="/demo/demo02">Demo pipe</a>
-            </li>
-        </ul>
-    </li>
-    <li>
-        <a>Exo</a>
-        <ul>
-            <li>
-                <a routerLink="/exo/exo01">Exo Timer</a>
-            </li>
-        </ul>
-    </li>
+  }
 </ul>
+
+<!--<ul>-->
+<!--  <li *ngFor="let item of navItems; let i = index">-->
+<!--    <a [routerLink]="item.url" (click)="toggleVisible(item)">{{ item.title }}</a>-->
+<!--    <ul *ngIf="item.children && item.isVisible">-->
+<!--      <li class="children" *ngFor="let child of item.children">-->
+<!--        <a [routerLink]="child.url">{{ child.title }}</a>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </li>-->
+<!--</ul>-->

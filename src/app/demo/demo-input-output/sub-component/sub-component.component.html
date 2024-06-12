@@ -1,0 +1,7 @@
+<div class="child">
+  <ng-content></ng-content>
+  <p>La couleur choisie est le {{parentColor}}</p>
+  <p>Est ce que ca te plait?</p>
+  <button (click)="triggerMyEvent('oui')">OUI</button>
+  <button (click)="triggerMyEvent('non')">NON</button>
+</div>
