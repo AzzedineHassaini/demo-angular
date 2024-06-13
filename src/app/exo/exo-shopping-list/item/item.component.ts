@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {ItemModel} from "../../../models/item.model";
+import {CartItem} from "../../../models/cartItem";
 
 @Component({
   selector: 'app-item',
@@ -9,6 +9,6 @@ import {ItemModel} from "../../../models/item.model";
 export class ItemComponent {
 
   @Input({required: true})
-  item!: ItemModel;
+  item!: CartItem;
 
 }

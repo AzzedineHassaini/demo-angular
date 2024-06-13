@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {ItemModel} from "../../../models/item.model";
+import {CartItem} from "../../../models/cartItem";
 
 @Component({
   selector: 'app-cart',
@@ -9,26 +9,26 @@ import {ItemModel} from "../../../models/item.model";
 export class CartComponent {
 
   @Input()
-  cartItems!: ItemModel[];
+  cartItems!: CartItem[];
 
-  item!: ItemModel;
+  item!: CartItem;
 
   @Output()
-  addItem: EventEmitter<ItemModel> = new EventEmitter();
+  addItem: EventEmitter<CartItem> = new EventEmitter();
   @Output()
-  removeItem: EventEmitter<ItemModel> = new EventEmitter();
+  removeItem: EventEmitter<CartItem> = new EventEmitter();
   @Output()
-  viewItem: EventEmitter<ItemModel> = new EventEmitter();
+  viewItem: EventEmitter<CartItem> = new EventEmitter();
 
-  add(response: ItemModel): void {
+  add(response: CartItem): void {
     this.addItem.emit(response);
   }
 
-  remove(response: ItemModel): void {
+  remove(response: CartItem): void {
     this.removeItem.emit(response);
   }
 
-  view(response: ItemModel) : void {
+  view(response: CartItem) : void {
     this.item = response;
     this.viewItem.emit(response);
   }

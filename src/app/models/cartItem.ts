@@ -1,4 +1,4 @@
-export interface ItemModel {
+export interface CartItem {
   reference: string;
   name: string;
   price: number;

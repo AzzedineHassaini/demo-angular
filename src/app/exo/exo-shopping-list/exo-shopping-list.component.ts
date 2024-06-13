@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ItemModel} from "../../models/item.model";
+import {CartItem} from "../../models/cartItem";
 import {ShoppingCartService} from "../../services/shopping-cart.service";
 
 @Component({
@@ -10,22 +10,22 @@ import {ShoppingCartService} from "../../services/shopping-cart.service";
 export class ExoShoppingListComponent {
 
 
-  cartItems!: ItemModel[];
-  item: ItemModel = {reference:'', name:'', price:0, quantity:0, img:''};
+  cartItems!: CartItem[];
+  item: CartItem = {reference:'', name:'', price:0, quantity:0, img:''};
 
   constructor(private readonly _shoppingCartService: ShoppingCartService) {
     this.cartItems = _shoppingCartService.cartItems;
   }
 
-  addItem(itemToAdd: ItemModel) {
+  addItem(itemToAdd: CartItem) {
     this._shoppingCartService.addItem(itemToAdd);
   }
 
-  addOneToCart(itemToAdd: ItemModel) {
+  addOneToCart(itemToAdd: CartItem) {
     this._shoppingCartService.addOneToCart(itemToAdd);
   }
 
-  removeOneFromCart(itemToRemove: ItemModel) {
+  removeOneFromCart(itemToRemove: CartItem) {
     this._shoppingCartService.removeOneFromCart(itemToRemove);
   }
 
