@@ -1,0 +1,29 @@
+<div class="chapter">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name : </label>
+      <input type="text" formControlName="name">
+      @if(registerForm.get('name')?.touched && registerForm.get('name')?.hasError('required')){
+        <span class="error">Name is required</span>
+      }
+    </div>
+    <div>
+      <label for="breed">Breed : </label>
+      <input type="text" formControlName="breed">
+    </div>
+    <div>
+      <label for="birthdate">Birthdate : </label>
+      <input type="date" formControlName="birthdate">
+    </div>
+    <div>
+      <label for="ownerName">Owner name : </label>
+      <input type="text" formControlName="ownerName">
+    </div>
+    <div>
+      <label for="password">Password : </label>
+      <input type="password" formControlName="password">
+    </div>
+
+    <button type="submit"> Save </button>
+  </form>
+</div>

@@ -1,0 +1,26 @@
+<div class="pokedex">
+  <div class="left">
+    @if(currentPokemon){
+      <h2>{{currentPokemon.id}} : {{currentPokemon.name | titlecase}}</h2>
+      <img [src]="currentPokemon.imageUrl">
+      <p>Height : {{currentPokemon.height}}</p>
+      <p>Weight : {{currentPokemon.weight}}</p>
+    } @else{
+      <h2>No pokemon selected</h2>
+    }
+  </div>
+  <div class="right">
+    <div class="buttons">
+      <button (click)="previousPage()"><-</button>
+      <button (click)="nextPage()">-></button>
+    </div>
+    <ul>
+      @for(p of pokemonResult.results; track $index){
+        <li (click)="getOne(p.url)">
+          <img [src]="p.imgUrl">
+          <p>{{p.name | titlecase}}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</div>

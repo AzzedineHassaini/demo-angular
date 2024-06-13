@@ -1,0 +1,15 @@
+.chapter{
+  text-align: center;
+  img{
+    margin: 10px;
+  }
+  .buttons{
+    display: flex;
+    justify-content: space-around;
+
+    button{
+      padding: 5px;
+    }
+  }
+}
+
